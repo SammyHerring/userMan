@@ -1,0 +1,68 @@
+.Dd 11/11/19               \" DATE
+.Dt userMan 1.0.0      \" Program name and manual section number
+.Os Jessie
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm userMan,
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.Nm ./userMan.sh,
+.Nm SysAdmin User Manager.
+.\" Use .Nm macro to designate other names for the documented program.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op Fl g
+.Ar (file.csv)
+.Op Fl v
+.Op Fl e
+.Op Fl k
+.Op Fl h
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+This script is intended to be used by system administrators in conjunction with a formatted '.csv' file to generate and mannipulate account creation processes. See 'example.csv' for the required user data format. Flags may be used when calling the script to avoid a GUI-orientated process, although it is recomended for first-time users.
+.Pp                      \" Inserts a space
+
+Script Files:
+.Bl -tag -width -indent  \" Begins a tagged list
+.It Pa file.csv               \" Each item preceded by .It macro
+A '.csv' file containing the required user data for user generation and manipulation.
+.Bl -indent See 'example.csv' for format and layout constraints.
+.
+.El                      \" Ends the list
+.Pp
+
+Script Flags (flags may be used to skip GUI features):
+.Bl -tag -width -indent  \" Differs from above in tag removed
+.It Fl g                 \"-a flag as a list item
+Generate Users using the second argument provided as a file location.
+.It Fl v
+View Current Account Creation Processes in CLI.
+.It Fl e
+Export Current Account Creation Processes to Log File.
+.It Fl k
+Kill Current Account Creation Processes.
+.It Fl h
+Show 'userMan' MAN Help Page
+.It Fl -help
+Show 'userMan' MAN Help Page, just like "-h".
+.El                      \" Ends the list
+.Pp
+ Note: Flags may be used in combination, although it is not expected in normal use.
+.Pp
+.\" .Sh ENVIRONMENT      \" May not be needed
+.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+.\" .It Ev ENV_VAR_1
+.\" Description of ENV_VAR_1
+.\" .It Ev ENV_VAR_2
+.\" Description of ENV_VAR_2
+.\" .El
+.Sh FILES                \" File used or created by the topic of the man page
+.Bl -tag -width -indent  \" Begins a tagged list
+.It ~/(userManDirectory)/userMan.sh
+System entrypoint to be called to use userMan Script
+.It Pa ~/(userManDirectory)/example.csv
+Example '.CSV' File showing correct format for user data
+.It Pa ~/(userManDirectory)/(file).csv
+Actual '.CSV' File that the user will provide.
+.It Pa ~/(userManDirectory)/userMan-Help
+userMan Help Guide File
+.El                      \" Ends the list
+.\" .Sh HISTORY           \" Document history if command behaves in a unique manner
